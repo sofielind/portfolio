@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sofie Lind - Editorial Design</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://use.typekit.net/snd8tbd.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+ 
+<body class="page-loading">
+
+	<header>
+
+		<nav class="navbar">
+			<a class="logo" href="index.html">
+				<span class="logo-sofie">sofie</span><span class="logo-lind">lind</span>
+			</a>
+
+			<ul class="nav_links">
+				<li><a class="mywork" href="mywork.html">My work</a></li>
+				<li><a class="about" href="about.html">About</a></li>
+				<li><a class="contact" href="index.html#contact">Contact</a></li>
+			</ul>
+		</nav>
+	
+	</header>
+
+	<main class="project">
+
+  		<!-- INTRO -->
+		<section class="project-intro">
+
+  			<p class="intro-eyebrow">Editorial Design</p>
+
+  			<div class="intro-title-row">
+    			<h1 class="intro-title">Magazine layout</h1>
+
+    			<a class="back-button" href="mywork.html">
+      				<span>← Projects</span>
+    			</a>
+  			</div>
+
+		</section>
+
+
+
+  		<!-- HORIZONTAL SCROLL -->
+  		<div class="scroll-wrapper">
+  			<button class="scroll-arrow scroll-left" aria-label="Scroll left">‹</button>
+
+  			<section class="project-scroll">
+    			<div class="scroll-row">
+      				<figure class="scroll-item">
+        				<img src="images/mag2.jpg" alt="Cover spread exploring typographic balance">
+       					<figcaption></figcaption>
+      				</figure>
+      				<figure class="scroll-item">
+        				<img src="images/mag3.jpg" alt="Interior layout with reduced colour palette">
+        				<figcaption></figcaption>
+      				</figure>
+      				<figure class="scroll-item">
+        				<img src="images/mag1.jpg" alt="Main concept image">
+        				<figcaption></figcaption>
+      				</figure>
+      				<figure class="scroll-item">
+        				<img src="images/mag4.jpg" alt="Detail typography and spacing">
+       					<figcaption></figcaption>
+      				</figure>
+    			</div>
+  			</section>
+
+  			<button class="scroll-arrow scroll-right" aria-label="Scroll right">›</button>
+		</div>
+
+  		<!-- TEKST -->
+  		<section class="project-text">
+    		<p>
+      		
+    		</p>
+  		</section>
+
+	</main>
+
+	
+	<footer>Copyright © Sofie Lind. Design by Sofie Lind</footer>
+
+	<script>
+		const scrollContainer = document.querySelector('.project-scroll');
+const scrollRow = document.querySelector('.scroll-row');
+const items = scrollRow.querySelectorAll('.scroll-item');
+
+// --- 1. Dupliser innholdet 3x for infinite loop ---
+const originalContent = scrollRow.innerHTML;
+scrollRow.innerHTML = originalContent + originalContent + originalContent;
+
+// --- 2. Start scroll i midten ---
+requestAnimationFrame(() => {
+  const singleWidth = scrollRow.scrollWidth / 3;
+  scrollContainer.scrollLeft = singleWidth;
+});
+
+// --- 3. Infinite scroll med buffer ---
+scrollContainer.addEventListener('scroll', () => {
+  const singleWidth = scrollRow.scrollWidth / 3;
+
+  // Venstre side
+  if (scrollContainer.scrollLeft <= singleWidth * 0.1) {
+    scrollContainer.scrollLeft += singleWidth;
+  }
+
+  // Høyre side
+  if (scrollContainer.scrollLeft >= singleWidth * 1.9) {
+    scrollContainer.scrollLeft -= singleWidth;
+  }
+});
+
+// --- 4. IntersectionObserver for captions ---
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('is-active', entry.isIntersecting);
+    });
+  },
+  {
+    root: scrollContainer,
+    threshold: 0.6
+  }
+);
+
+// Observer alle scroll-items
+scrollRow.querySelectorAll('.scroll-item').forEach(item => observer.observe(item));
+
+// --- 5. Pil-navigasjon ---
+const scrollLeftBtn = document.querySelector('.scroll-left');
+const scrollRightBtn = document.querySelector('.scroll-right');
+
+scrollLeftBtn.addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+  scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
+	</script>
+
+
+
+
+	<script>
+  		window.addEventListener("load", function () {
+    		document.body.classList.remove("page-loading");
+  		});
+	</script>
+
+</body>
+</html>

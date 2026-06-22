@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sofie Lind - Under Construction</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f7efe5, #e5ded4);
+      color: #78020E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 420px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .loader {
+      width: 64px;
+      height: 64px;
+      border: 6px solid rgba(255,255,255,0.2);
+      border-top-color: #EE5A36;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+     .back-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      background: #FFA5C8;
+      color: #f7efe5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    }
+
+    .back-button:hover {
+      background: #78020E;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    .footer {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="card">
+    <div class="loader"></div>
+    <h1>Vi bygger noe kult 🚧</h1>
+    <p>
+      Denne siden er under konstruksjon akkurat nå.<br>
+      Kom tilbake snart – vi er nesten klare!
+    </p>
+
+    <a href="index.html" class="back-button">← Take me back</a>
+
+    <div class="footer">
+      © 2026 Sofie Lind
+    </div>
+  </div>
+</body>
+</html>

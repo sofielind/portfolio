@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Sofie Lind - Graphic design</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="https://use.typekit.net/snd8tbd.css">
+	<link rel="stylesheet" href="https://use.typekit.net/ian3kuj.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+ 
+<body class="page-loading">
+
+	<header>
+
+		<nav class="navbar">
+			<a class="logo" href="index.html">
+				<span class="logo-sofie">sofie</span><span class="logo-lind">lind</span>
+			</a>
+
+			<ul class="nav_links">
+				<li><a class="mywork" href="mywork.html"><span>My work</span></a></li>
+				<li><a class="about" href="about.html"><span>About</span></a></li>
+				<li><a class="contact" href="#contact"><span>Contact</span></a></li>
+			</ul>
+		</nav>
+	
+	</header>
+
+	
+	<main>
+
+		<section class="hero-intro">
+  			<p class="hero-eyebrow">Graphic Designer.</p>
+
+ 			<h1 class="hero-statement">Branding · Editorial · Typography · Illustration · Photography</h1>
+		</section>
+
+	
+		<section class="image-row">
+  			<a class="image-item" href="animation.html">
+    			<img src="images/animation1-crop.jpg" alt="">
+				<div class="overlay-text">
+      				<span class="line1">10 sec animation</span>
+      				<span class="line2">Motion Design</span>
+    			</div>
+			</a>
+
+ 			 <a class="image-item" href="awareness-campain.html">
+   				<img src="images/ADHD-crop.jpg" alt="">
+				<div class="overlay-text">
+      				<span class="line1">awareness-campain - Unmasking ADHD</span>
+      				<span class="line2">Visual Communication</span>
+    			</div>
+			 </a>
+
+  			<a class="image-item" href="brand-design.html">
+    			<img src="images/TKJ.jpg" alt="">
+				<div class="overlay-text">
+      				<span class="line1">Tømrer T.K. Johansen</span>
+      				<span class="line2">Brand Design</span>
+    			</div>
+			</a>
+
+  			<a class="image-item" href="sult-menu.html">
+    			<img src="images/Sult/sult-meny/IMG_5693.JPG" alt="">
+				<div class="overlay-text">
+      				<span class="line1">Sult Grill House menu design</span>
+      				<span class="line2">Graphic Design</span>
+    			</div>
+			</a>
+		</section>
+
+		<section class="about-preview">
+			<div class="about-preview-container">
+		
+				<div class="about-preview-text">
+					<h2>About me</h2>
+					<p>
+						I’m a graphic designer with a passion for creating visual identities and meaningful design solutions. 
+						I enjoy working across disciplines — from branding and typography to illustration and photography.
+					</p>
+
+					<a href="about.html" class="about-preview-link">Read more →</a>
+				</div>
+
+				<div class="about-preview-image">
+					<img src="images/me-polaroid.png" alt="Portrait of Sofie Lind">
+				</div>
+
+			</div>
+		</section>
+
+
+		<section id="contact">
+  			<div class="contact-box">
+    			<h2>Contact Me</h2>
+    			<p class="intro-text">I’d love to hear from you! Fill out the form below and I’ll get back to you as soon as possible.</p>
+    			
+				<form action="send-message.php" method="POST">
+
+					<div class="form-row">
+      					<input type="text" id="name" name="name" placeholder="Enter your name" required>
+      					<input type="email" id="email" name="email" placeholder="Enter your email" required>
+      				</div>
+
+      				<textarea id="message" name="message" rows="5" placeholder="Write your message" required></textarea>
+      
+      				<button type="submit">Send</button>
+    			</form>
+  			</div>
+		</section>
+
+
+	</main>
+	
+	<footer>Copyright © Sofie Lind. Design by Sofie Lind</footer>
+	
+	<script>
+  		document.addEventListener("DOMContentLoaded", function () {
+    		// Hvis siden åpnes med #something (f.eks. fra en annen side)
+    		if (window.location.hash) {
+      			const target = document.querySelector(window.location.hash);
+
+      			if (target) {
+        			// Slå av smooth midlertidig
+        			document.documentElement.style.scrollBehavior = "auto";
+
+        			// Vent litt så siden rekker å laste
+        			setTimeout(() => {
+          				target.scrollIntoView();
+        			}, 50);
+
+        			// Slå smooth scroll på igjen
+        			setTimeout(() => {
+          				document.documentElement.style.scrollBehavior = "smooth";
+        			}, 100);
+      			}
+    		}
+  		});
+	</script>
+
+
+
+	<script>
+  		window.addEventListener("load", function () {
+    		document.body.classList.remove("page-loading");
+  		});
+	</script>
+
+</body>
+</html>
